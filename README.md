@@ -1,0 +1,1 @@
+# symfony-ux-ckeditor5
