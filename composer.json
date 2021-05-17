@@ -1,0 +1,37 @@
+{
+    "name": "xearts/symfony-ux-ckeditor5",
+    "description": "Provides a CKEditor integration for symfony ux.",
+    "type": "symfony-bundle",
+    "keywords": [
+        "ckeditor"
+    ],
+    "authors": [
+        {
+            "name": "t.takabayash",
+            "email": "t.takabayashi@xearts.jp"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Xearts\\Symfony\\UX\\Ckeditor5\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "require": {
+        "php": ">=7.2.5",
+        "symfony/config": "^4.4.17|^5.0",
+        "symfony/dependency-injection": "^4.4.17|^5.0",
+        "symfony/form": "^4.4.17|^5.0",
+        "symfony/http-kernel": "^4.4.17|^5.0"
+    },
+    "require-dev": {
+        "symfony/framework-bundle": "^4.4.17|^5.0",
+        "symfony/phpunit-bridge": "^5.2",
+        "symfony/twig-bundle": "^4.4.17|^5.0",
+        "symfony/var-dumper": "^4.4.17|^5.0"
+    },
+    "minimum-stability": "dev"
+}

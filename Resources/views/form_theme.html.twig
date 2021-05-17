@@ -1,0 +1,12 @@
+{% block xearts_ckeditor5_textarea_widget -%}
+  {%- set dataController = (attr['data-controller']|default('') ~ ' xearts--symfony-ux-ckeditor5--ckeditor5')|trim -%}
+
+  {% set attr = attr|default({})|merge({
+    'data-controller': dataController,
+    'data-xearts--symfony-ux-ckeditor5--ckeditor5-config-value': ckeditor5_options,
+    'data-xearts--symfony-ux-ckeditor5--ckeditor5-image-upload-url-value': image_upload_url|default(''),
+    'data-xearts--symfony-ux-ckeditor5--ckeditor5-image-upload-csrf-token-value': image_upload_csrf_token|default(''),
+  }) %}
+
+  {{ block('textarea_widget') }}
+{%- endblock %}
