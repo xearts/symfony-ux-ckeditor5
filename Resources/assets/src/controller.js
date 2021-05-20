@@ -11,11 +11,12 @@
 
 import { Controller } from 'stimulus';
 
-import ClassicEditor from "../ckeditor/dist/ckeditor";
+import Ckeditor from "../ckeditor5/build/ckeditor";
 
 export default class extends Controller {
     static values = {
         config: Object,
+        language: String,
         imageUploadCsrfToken: String,
         imageUploadUrl: String,
     }
@@ -38,7 +39,11 @@ export default class extends Controller {
                 'X-CSRF-TOKEN': this.imageUploadCsrfTokenValue
             }
         };
-        ClassicEditor
+        if (this.languageValue) {
+            config['language'] = this.languageValue;
+            require('../ckeditor5/build/translations/' + this.languageValue)
+        }
+        Ckeditor
           .create(this.element, config)
           .then(editor => {
               console.log( editor );

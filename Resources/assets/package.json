@@ -14,7 +14,6 @@
         }
     },
     "scripts": {
-        "build-ckeditor": "webpack --mode production",
         "build": "babel src -d dist",
         "test": "babel src -d dist && jest",
         "lint": "eslint src test"
@@ -22,42 +21,16 @@
     "peerDependencies": {
         "stimulus": "^2.0.0"
     },
-    "dependencies": {
-        "@ckeditor/ckeditor5-autoformat": "^27.1.0",
-        "@ckeditor/ckeditor5-basic-styles": "^27.1.0",
-        "@ckeditor/ckeditor5-block-quote": "^27.1.0",
-        "@ckeditor/ckeditor5-cloud-services": "^27.1.0",
-        "@ckeditor/ckeditor5-editor-classic": "^27.1.0",
-        "@ckeditor/ckeditor5-essentials": "^27.1.0",
-        "@ckeditor/ckeditor5-heading": "^27.1.0",
-        "@ckeditor/ckeditor5-image": "^27.1.0",
-        "@ckeditor/ckeditor5-indent": "^27.1.0",
-        "@ckeditor/ckeditor5-link": "^27.1.0",
-        "@ckeditor/ckeditor5-list": "^27.1.0",
-        "@ckeditor/ckeditor5-media-embed": "^27.1.0",
-        "@ckeditor/ckeditor5-paragraph": "^27.1.0",
-        "@ckeditor/ckeditor5-paste-from-office": "^27.1.0",
-        "@ckeditor/ckeditor5-table": "^27.1.0",
-        "@ckeditor/ckeditor5-typing": "^27.1.0"
-    },
     "devDependencies": {
         "@babel/cli": "^7.12.1",
         "@babel/core": "^7.14.2",
         "@babel/plugin-proposal-class-properties": "^7.12.1",
         "@babel/preset-env": "^7.12.7",
-        "@ckeditor/ckeditor5-core": "^27.1.0",
-        "@ckeditor/ckeditor5-dev-utils": "^24.0.0",
-        "@ckeditor/ckeditor5-dev-webpack-plugin": "^24.0.0",
-        "@ckeditor/ckeditor5-theme-lark": "^27.1.0",
         "@symfony/stimulus-testing": "^1.1.0",
         "babel-loader": "^8.2.2",
         "postcss-loader": "^3.0.0",
         "raw-loader": "^4.0.1",
-        "stimulus": "^2.0.0",
-        "style-loader": "^1.2.1",
-        "terser-webpack-plugin": "^3.0.2",
-        "webpack": "^4.43.0",
-        "webpack-cli": "^3.3.11"
+        "stimulus": "^2.0.0"
     },
     "jest": {
         "testRegex": "test/.*\\.test.js",

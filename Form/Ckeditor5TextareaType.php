@@ -31,6 +31,7 @@ class Ckeditor5TextareaType extends AbstractType
 
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
+        $view->vars['language'] = $options['language'];
         if ($options['image_upload_url']) {
             $view->vars['image_upload_url'] = $options['image_upload_url'];
         } else if ($options['image_upload_route'] && $this->urlGenerator) {
@@ -49,6 +50,10 @@ class Ckeditor5TextareaType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
+        $resolver
+            ->setDefault('language', '')
+            ->setAllowedTypes('language', ['string'])
+        ;
         $resolver
             ->setDefault('image_upload_url', '')
             ->setAllowedTypes('image_upload_url', ['string'])

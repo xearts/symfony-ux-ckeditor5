@@ -17,7 +17,7 @@ exports["default"] = void 0;
 
 var _stimulus = require("stimulus");
 
-var _ckeditor = _interopRequireDefault(require("../ckeditor/dist/ckeditor"));
+var _ckeditor = _interopRequireDefault(require("../ckeditor5/build/ckeditor"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -74,6 +74,12 @@ var _default = /*#__PURE__*/function (_Controller) {
         }
       };
 
+      if (this.languageValue) {
+        config['language'] = this.languageValue;
+
+        require('../ckeditor5/build/translations/' + this.languageValue);
+      }
+
       _ckeditor["default"].create(this.element, config).then(function (editor) {
         console.log(editor);
       })["catch"](function (error) {
@@ -89,6 +95,7 @@ exports["default"] = _default;
 
 _defineProperty(_default, "values", {
   config: Object,
+  language: String,
   imageUploadCsrfToken: String,
   imageUploadUrl: String
 });
