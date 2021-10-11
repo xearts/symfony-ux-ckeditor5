@@ -78,8 +78,7 @@ var _default = /*#__PURE__*/function (_Controller) {
         config['language'] = this.languageValue; // require('../ckeditor5/build/translations/' + this.languageValue)
       }
 
-      _ckeditor["default"].create(this.element, config).then(function (editor) {
-        console.log(Array.from(editor.ui.componentFactory.names()));
+      _ckeditor["default"].create(this.element, config).then(function (editor) {// console.log(Array.from( editor.ui.componentFactory.names() ))
       })["catch"](function (error) {
         console.error(error);
       });
