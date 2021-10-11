@@ -11,7 +11,7 @@
 
 import { Controller } from 'stimulus';
 
-import Ckeditor from "../ckeditor5/build/ckeditor";
+import Ckeditor from "./ckeditor";
 
 export default class extends Controller {
     static values = {
@@ -41,15 +41,16 @@ export default class extends Controller {
         };
         if (this.languageValue) {
             config['language'] = this.languageValue;
-            require('../ckeditor5/build/translations/' + this.languageValue)
+            // require('../ckeditor5/build/translations/' + this.languageValue)
         }
         Ckeditor
           .create(this.element, config)
           .then(editor => {
-              console.log( editor );
+              // console.log(Array.from( editor.ui.componentFactory.names() ))
           })
           .catch( error => {
               console.error( error );
           });
+
     }
 }

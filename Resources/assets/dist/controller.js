@@ -17,7 +17,7 @@ exports["default"] = void 0;
 
 var _stimulus = require("stimulus");
 
-var _ckeditor = _interopRequireDefault(require("../ckeditor5/build/ckeditor"));
+var _ckeditor = _interopRequireDefault(require("./ckeditor"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -33,7 +33,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -75,13 +75,11 @@ var _default = /*#__PURE__*/function (_Controller) {
       };
 
       if (this.languageValue) {
-        config['language'] = this.languageValue;
-
-        require('../ckeditor5/build/translations/' + this.languageValue);
+        config['language'] = this.languageValue; // require('../ckeditor5/build/translations/' + this.languageValue)
       }
 
       _ckeditor["default"].create(this.element, config).then(function (editor) {
-        console.log(editor);
+        console.log(Array.from(editor.ui.componentFactory.names()));
       })["catch"](function (error) {
         console.error(error);
       });
