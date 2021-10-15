@@ -71,7 +71,7 @@ Add ckeditor5 encore setting to webpack.config.json
 ```javascript
 
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
-const { ckeditorstyles } = require( '@ckeditor/ckeditor5-dev-utils' );
+const { styles as ckeditorstyles } = require( '@ckeditor/ckeditor5-dev-utils' );
 
 // ...
 // ...
