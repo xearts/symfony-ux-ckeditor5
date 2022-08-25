@@ -39,6 +39,8 @@ var _italic = _interopRequireDefault(require("@ckeditor/ckeditor5-basic-styles/s
 
 var _link = _interopRequireDefault(require("@ckeditor/ckeditor5-link/src/link.js"));
 
+var _linkimage = _interopRequireDefault(require("@ckeditor/ckeditor5-link/src/linkimage.js"));
+
 var _list = _interopRequireDefault(require("@ckeditor/ckeditor5-list/src/list.js"));
 
 var _mediaembed = _interopRequireDefault(require("@ckeditor/ckeditor5-media-embed/src/mediaembed.js"));
@@ -93,7 +95,7 @@ var Editor = /*#__PURE__*/function (_ClassicEditor) {
 
 
 Editor.builtinPlugins = [_essentials["default"], // UploadAdapter,
-_autoformat["default"], _bold["default"], _italic["default"], _blockquote["default"], _cloudservices["default"], _heading["default"], _image["default"], _imagecaption["default"], _imagestyle["default"], _imagetoolbar["default"], _imageresize["default"], _imageupload["default"], _indent["default"], _link["default"], _list["default"], _mediaembed["default"], _paragraph["default"], _pastefromoffice["default"], _table["default"], _tabletoolbar["default"], _texttransformation["default"], _simpleuploadadapter["default"], _generalhtmlsupport["default"], _sourceediting["default"]];
+_autoformat["default"], _bold["default"], _italic["default"], _blockquote["default"], _cloudservices["default"], _heading["default"], _image["default"], _imagecaption["default"], _imagestyle["default"], _imagetoolbar["default"], _imageresize["default"], _imageupload["default"], _indent["default"], _link["default"], _linkimage["default"], _list["default"], _mediaembed["default"], _paragraph["default"], _pastefromoffice["default"], _table["default"], _tabletoolbar["default"], _texttransformation["default"], _simpleuploadadapter["default"], _generalhtmlsupport["default"], _sourceediting["default"]];
 Editor.defaultConfig = {
   toolbar: {
     items: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'outdent', 'indent', '|', 'uploadImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'undo', 'redo', '|', 'sourceEditing']
@@ -128,7 +130,7 @@ Editor.defaultConfig = {
       value: '20',
       label: '20%'
     }],
-    toolbar: ['imageStyle:inline', // A dropdown containing `alignLeft` and `alignRight` options.
+    toolbar: ['linkImage', '|', 'imageStyle:inline', // A dropdown containing `alignLeft` and `alignRight` options.
     'imageStyle:wrapText', // A dropdown containing `alignBlockLeft`, `block` (default) and  `alignBlockRight` options.
     'imageStyle:breakText', '|', 'resizeImage', '|', 'toggleImageCaption', 'imageTextAlternative']
   },
